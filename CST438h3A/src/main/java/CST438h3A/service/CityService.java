@@ -65,15 +65,15 @@ public class CityService {
 	}
 
 
-public void requestReservation( 
-        String cityName, 
-        String level, 
-        String email) {
-String msg  = "{\"cityName\": \""+ cityName + 
+	public void requestReservation(
+			String cityName,
+			String level,
+			String email) {
+	String msg  = "{\"cityName\": \""+ cityName +
     "\" \"level\": \""+level+
     "\" \"email\": \""+email+"\"}" ;
-System.out.println("Sending message:"+msg);
-rabbitTemplate.convertSendAndReceive(
+	System.out.println("Sending message:"+msg);
+	rabbitTemplate.convertSendAndReceive(
      fanout.getName(), 
      "",   // routing key none.
      msg);

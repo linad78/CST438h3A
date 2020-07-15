@@ -33,7 +33,8 @@ public class CityController {
 			} else {
 				
 				model.addAttribute("cityInfo", cityInfo);
-				return "city_info";
+				// CODE REVIEW:  Changed name of returned file to match html file
+				return "CityIInfo";
 				   			
 			}
 	}
@@ -48,7 +49,8 @@ public class CityController {
 		model.addAttribute("level", level);
 		model.addAttribute("email", email);
 		cityService.requestReservation(cityName, level, email);
-		return "request_reservation";
+		// CODE REVIEW:  Changed name of returned file to match html file
+		return "RequestResevation";
 	}
 
 }
